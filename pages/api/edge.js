@@ -1,9 +1,10 @@
 export default async function handler() {
   return Response.json({
-    reason: AbortSignal.reason,
-    throwIfAborted: AbortSignal.throwIfAborted,
-    abort: AbortSignal.abort,
-    timeout: AbortSignal.timeout,
+    type: "edge",
+    reason: "reason" in AbortSignal,
+    throwIfAborted: "throwIfAborted" in AbortSignal,
+    abort: "abort" in AbortSignal,
+    timeout: "timeout" in AbortSignal,
   })
 }
 
